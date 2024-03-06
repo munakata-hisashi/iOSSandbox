@@ -8,11 +8,25 @@ public struct SwiftUIView: View {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             Button(
                 action: {
-                    APIClient.shared.login()
+                    APIClient.shared.methodDependent()
                 },
                 label: {
-                    Text("Request")
+                    Text("methodDependent")
+                })
 
+            Button(
+                action: {
+                    APIClient.shared.httpBody()
+                },
+                label: {
+                    Text("httpBody")
+                })
+            Button(
+                action: {
+                    APIClient.shared.queryString()
+                },
+                label: {
+                    Text("queryString")
                 })
         }
     }
