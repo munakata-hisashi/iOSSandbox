@@ -22,6 +22,7 @@
 		63E1155229B354B50080BEAA /* iOSSandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSSandbox.entitlements; sourceTree = "<group>"; };
 		63E1155429B354B50080BEAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63E1155B29B355060080BEAA /* MyLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MyLibrary; sourceTree = "<group>"; };
+		9F1566CC2BCE83910016237F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				63E1155029B354B50080BEAA /* Assets.xcassets */,
 				63E1155229B354B50080BEAA /* iOSSandbox.entitlements */,
 				63E1155329B354B50080BEAA /* Preview Content */,
+				9F1566CC2BCE83910016237F /* PrivacyInfo.xcprivacy */,
 			);
 			path = iOSSandbox;
 			sourceTree = "<group>";
