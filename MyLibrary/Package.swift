@@ -22,7 +22,8 @@ let package = Package(
         .target(
             name: "MyLibrary",
             dependencies: [
-                "TextWithLink"
+                "TextWithLink",
+                "Component"
             ]),
         .testTarget(
             name: "MyLibraryTests",
