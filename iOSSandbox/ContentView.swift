@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  iOSSandbox
-//
-//  Created by 宗像恒 on 2023/03/04.
-//
-
 import SwiftUI
 import MyLibrary
 
@@ -28,3 +21,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
