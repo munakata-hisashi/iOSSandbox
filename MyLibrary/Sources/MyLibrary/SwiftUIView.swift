@@ -1,3 +1,4 @@
+import APIClient
 import Component
 import ListWithFilter
 import SwiftUI
@@ -28,7 +29,8 @@ public struct SwiftUIView: View {
                     appended.destination()
                         .navigationTitle(appended.viewTitle)
                         .navigationBarTitleDisplayMode(.inline)
-                })
+                }
+            )
         }
     }
 }
