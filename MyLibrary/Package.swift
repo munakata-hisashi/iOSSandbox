@@ -13,8 +13,7 @@ let package = Package(
             targets: ["MyLibrary"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.8.1"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,7 +21,8 @@ let package = Package(
         .target(
             name: "MyLibrary",
             dependencies: [
-                "TextWithLink"
+                "TextWithLink",
+                "APIClient"
             ]),
         .testTarget(
             name: "MyLibraryTests",
@@ -37,4 +37,11 @@ let package = Package(
         .testTarget(
             name: "TextWithLinkTests",
             dependencies: ["TextWithLink"]),
-    ])
+        .target(
+            name: "APIClient",
+            dependencies: ["Alamofire"]),
+        .testTarget(
+            name: "APIClientTests",
+            dependencies: ["APIClient"])
+    ]
+)

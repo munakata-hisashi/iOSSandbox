@@ -37,3 +37,4 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+iOSSandbox.xcodeproj/project.xcworkspace/xcshareddata/

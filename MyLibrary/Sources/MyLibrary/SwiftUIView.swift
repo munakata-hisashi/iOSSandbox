@@ -1,18 +1,33 @@
+import APIClient
 import SwiftUI
 
 public struct SwiftUIView: View {
-    public init() { }
-    
-    let width: CGFloat = 300
-    let height: CGFloat = 100
-    let cutoutRadius: CGFloat = 50
-
+    public init() {}
     public var body: some View {
         VStack {
-            CutoutShape(width: 300, height: 100, cutoutRadius: 50, cornerRadius: 10)
-                .stroke()
-                        .fill(Color.blue)
-                        .frame(width: 300, height: 100)
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Button(
+                action: {
+                    APIClient.shared.methodDependent()
+                },
+                label: {
+                    Text("methodDependent")
+                })
+            
+            Button(
+                action: {
+                    APIClient.shared.httpBody()
+                },
+                label: {
+                    Text("httpBody")
+                })
+            Button(
+                action: {
+                    APIClient.shared.queryString()
+                },
+                label: {
+                    Text("queryString")
+                })
         }
     }
 }
