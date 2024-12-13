@@ -23,7 +23,8 @@ let package = Package(
             name: "MyLibrary",
             dependencies: [
                 "TextWithLink",
-                "Component"
+                "Component",
+                "ListWithFilter"
             ]),
         .testTarget(
             name: "MyLibraryTests",
@@ -38,4 +39,8 @@ let package = Package(
         .testTarget(
             name: "TextWithLinkTests",
             dependencies: ["TextWithLink"]),
+        .target(
+            name: "ListWithFilter",
+            dependencies: []
+        )
     ])

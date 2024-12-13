@@ -1,4 +1,5 @@
 import Component
+import ListWithFilter
 import SwiftUI
 
 public struct SwiftUIView: View {
@@ -56,7 +57,7 @@ enum AppPath: Int {
             .fill(Color.blue)
             .frame(width: 300, height: 100)
         case .additionalListAndFilter:
-            Text("list")
+            ListWithFilterView()
         }
     }
 }
