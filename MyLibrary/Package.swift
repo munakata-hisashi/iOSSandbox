@@ -22,26 +22,38 @@ let package = Package(
             name: "MyLibrary",
             dependencies: [
                 "TextWithLink",
+                "Component",
+                "ListWithFilter",
                 "APIClient"
             ]),
         .testTarget(
             name: "MyLibraryTests",
-            dependencies: ["MyLibrary"]),
+            dependencies: ["MyLibrary"]
+        ),
         .target(
             name: "Component",
             dependencies: []
         ),
         .target(
             name: "TextWithLink",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "TextWithLinkTests",
-            dependencies: ["TextWithLink"]),
+            dependencies: ["TextWithLink"]
+        ),
+        .target(
+            name: "ListWithFilter",
+            dependencies: []
+        ),
         .target(
             name: "APIClient",
-            dependencies: ["Alamofire"]),
+            dependencies: ["Alamofire"]
+        ),
         .testTarget(
             name: "APIClientTests",
-            dependencies: ["APIClient"])
+            dependencies: ["APIClient"]
+        )
     ]
 )
+
