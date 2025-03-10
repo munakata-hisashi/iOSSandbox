@@ -16,10 +16,15 @@ public struct SwiftUIView: View {
         NavigationStack(path: $path) {
             VStack {
                 NavigationLink(
-                    AppPath.cutoutShape.viewTitle, value: AppPath.cutoutShape)
+                    AppPath.uiSamples.viewTitle, value: AppPath.uiSamples
+                )
+                NavigationLink(
+                    AppPath.cutoutShape.viewTitle, value: AppPath.cutoutShape
+                )
                 NavigationLink(
                     AppPath.additionalListAndFilter.viewTitle,
-                    value: AppPath.additionalListAndFilter)
+                    value: AppPath.additionalListAndFilter
+                )
                 NavigationLink(
                     AppPath.alamofireSample.viewTitle, value: AppPath.alamofireSample
                 )
@@ -40,10 +45,12 @@ public struct SwiftUIView: View {
 
 /// 画面を追加するときはここにcaseを足す
 enum AppPath: Int {
-    case cutoutShape, additionalListAndFilter, alamofireSample
+    case uiSamples, cutoutShape, additionalListAndFilter, alamofireSample
 
     var viewTitle: String {
         switch self {
+        case .uiSamples:
+            "SwiftUI素振り"
         case .cutoutShape:
             "図形をかく"
         case .additionalListAndFilter:
@@ -56,6 +63,8 @@ enum AppPath: Int {
     @ViewBuilder
     func destination() -> some View {
         switch self {
+        case .uiSamples:
+            UISamplesView()
         case .cutoutShape:
             CutoutShape(
                 width: 300, height: 100, cutoutRadius: 50, cornerRadius: 10
