@@ -20,6 +20,9 @@ public struct SwiftUIView: View {
                 NavigationLink(
                     AppPath.additionalListAndFilter.viewTitle,
                     value: AppPath.additionalListAndFilter)
+                NavigationLink(
+                    AppPath.alamofireSample.viewTitle, value: AppPath.alamofireSample
+                )
             }
             .navigationTitle("ホーム")
             .navigationBarTitleDisplayMode(.inline)
@@ -37,7 +40,7 @@ public struct SwiftUIView: View {
 
 /// 画面を追加するときはここにcaseを足す
 enum AppPath: Int {
-    case cutoutShape, additionalListAndFilter
+    case cutoutShape, additionalListAndFilter, alamofireSample
 
     var viewTitle: String {
         switch self {
@@ -45,6 +48,8 @@ enum AppPath: Int {
             "図形をかく"
         case .additionalListAndFilter:
             "無限スクロールでの追加読み込みとフィルタ"
+        case .alamofireSample:
+            "Alamofireサンプル"
         }
     }
 
@@ -60,6 +65,8 @@ enum AppPath: Int {
             .frame(width: 300, height: 100)
         case .additionalListAndFilter:
             ListWithFilterView()
+        case .alamofireSample:
+            AFSampleView()
         }
     }
 }

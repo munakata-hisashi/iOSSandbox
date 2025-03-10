@@ -12,6 +12,7 @@ public struct APIClient {
     }
     
     /// JSONParameterEncoder example
+    /// レスポンスボディにパラメータを追加
     public func login() {
         
         let login = Login(email: "test@test.test", password: "testPassword")
@@ -25,10 +26,11 @@ public struct APIClient {
     }
     
     /// URLEncodedFormParameterEncoder example
+    /// URLEncodedFormParameterEncoderのdestinationをmethodDependentにするとHTTPのメソッドに合わせてクエリパラメータかリクエストボディにパラメータを追加してくれる
     public func methodDependent() {
         let parameters = ["foo": "bar"]
 
-        // All three of these calls are equivalent
+        // 以下の
         // AF.request("https://httpbin.org/get", parameters: parameters) // encoding defaults to `URLEncoding.default`
         // AF.request("https://httpbin.org/get", parameters: parameters, encoder: URLEncodedFormParameterEncoder.default)
         AF.request("https://httpbin.org/get", parameters: parameters, encoder: URLEncodedFormParameterEncoder(destination: .methodDependent)).response { response in
