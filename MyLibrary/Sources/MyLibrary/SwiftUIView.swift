@@ -9,25 +9,14 @@ public struct SwiftUIView: View {
     let width: CGFloat = 300
     let height: CGFloat = 100
     let cutoutRadius: CGFloat = 50
+    let contents: [AppPath] = AppPath.allCases
 
     @State var path = NavigationPath()
 
     public var body: some View {
         NavigationStack(path: $path) {
-            VStack {
-                NavigationLink(
-                    AppPath.uiSamples.viewTitle, value: AppPath.uiSamples
-                )
-                NavigationLink(
-                    AppPath.cutoutShape.viewTitle, value: AppPath.cutoutShape
-                )
-                NavigationLink(
-                    AppPath.additionalListAndFilter.viewTitle,
-                    value: AppPath.additionalListAndFilter
-                )
-                NavigationLink(
-                    AppPath.alamofireSample.viewTitle, value: AppPath.alamofireSample
-                )
+            List(contents) { appPath in
+                NavigationLink(appPath.viewTitle, value: appPath)
             }
             .navigationTitle("ホーム")
             .navigationBarTitleDisplayMode(.inline)
@@ -44,7 +33,11 @@ public struct SwiftUIView: View {
 }
 
 /// 画面を追加するときはここにcaseを足す
-enum AppPath: Int {
+enum AppPath: Identifiable, CaseIterable {
+    var id: String {
+        viewTitle
+    }
+    
     case uiSamples, cutoutShape, additionalListAndFilter, alamofireSample
 
     var viewTitle: String {

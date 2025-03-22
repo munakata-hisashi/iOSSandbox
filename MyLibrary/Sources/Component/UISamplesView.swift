@@ -8,23 +8,30 @@
 import SwiftUI
 
 public struct UISamplesView: View {
+    let themes: [SampleTheme] = SampleTheme.allCases
     public init() { }
     public var body: some View {
         List(themes) { theme in
-            NavigationLink(theme.label, destination: { CountdownView() })
+            NavigationLink(destination: { theme.view }, label: { Text("\(theme.id)")})
         }
     }
 }
 
-let themes: [SampleTheme] = [
-    .init(id: 1, title: "CountdownView")
-]
-
-struct SampleTheme: Identifiable {
-    let id: Int
-    let title: String
+enum SampleTheme:String, Identifiable, CaseIterable {
+    case Countdown
+    case TrimSample
     
-    var label: String {
-        "\(id): \(title)"
+    var id: String {
+        self.rawValue
+    }
+    
+    @ViewBuilder
+    var view: some View {
+        switch self {
+        case .Countdown:
+            CountdownView()
+        case .TrimSample:
+            TrimSampleView()
+        }
     }
 }

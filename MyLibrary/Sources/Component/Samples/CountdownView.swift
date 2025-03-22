@@ -24,17 +24,19 @@ struct CountdownView: View {
                 .animation(.default, value: count)
             
             ZStack {
-                // Place hands in a circle
+                // 数字の真下から、数字の周りを囲うようにカプセル型のViewを配置していく
                 ForEach(Array(0..<numberOfDivision), id: \.self) { angle in
                     Capsule()
                         .frame(width: handSize.width, height: handSize.height)
-                        .offset(x: 0, y: radius)
+                        .offset(x: 0, y: 100)
+                    // 0度から、350度まで10度ずつ増やす
                         .rotationEffect(.degrees(Double(angle) * degreeInterval))
+                        .foregroundStyle(Color.cyan)
                 }
             }
             .mask {
                 Circle()
-                    .trim(from: 0, to: degree / 360) // By changing degree using withAnimation, the trim fraction also changes, creating hands animation
+                    .trim(from: 0, to: 360 / 360) // By changing degree using withAnimation, the trim fraction also changes, creating hands animation
                     .stroke(lineWidth: handSize.height)
                     .frame(width: radius * 2, height: radius * 2)
                     .rotationEffect(.degrees(-90.0 - degreeInterval/2)) // Let hands animation start from upward (adjusted to show entire first hand)
