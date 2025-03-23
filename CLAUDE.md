@@ -2,7 +2,7 @@
 
 ## Build & Test Commands
 - Build project: `xcodebuild -project iOSSandbox.xcodeproj -scheme iOSSandbox build`
-- Run all tests: `xcodebuild -project iOSSandbox.xcodeproj -scheme iOSSandbox test`
+- Run all tests: `xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 15,OS=18.1' -scheme iOSSandbox -project /Users/hisashi/work/iOSSandbox/iOSSandbox.xcodeproj`
 - Run specific test: `xcodebuild -project iOSSandbox.xcodeproj -scheme iOSSandbox test -only-testing:MyLibraryTests/MyLibraryTests/testExample`
 - Package tests: `swift test --filter MyLibraryTests.testExample`
 
