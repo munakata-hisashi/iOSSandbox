@@ -29,6 +29,9 @@ public struct SwiftUIView: View {
                 }
             )
         }
+        .onChange(of: path.count) { oldValue, newValue in
+            print("NavigationPath count changed: \(oldValue) -> \(newValue)")
+        }
     }
 }
 
@@ -38,7 +41,7 @@ enum AppPath: Identifiable, CaseIterable {
         viewTitle
     }
     
-    case uiSamples, cutoutShape, additionalListAndFilter, alamofireSample
+    case uiSamples, cutoutShape, additionalListAndFilter, alamofireSample, dismissSample
 
     var viewTitle: String {
         switch self {
@@ -50,6 +53,8 @@ enum AppPath: Identifiable, CaseIterable {
             "無限スクロールでの追加読み込みとフィルタ"
         case .alamofireSample:
             "Alamofireサンプル"
+        case .dismissSample:
+            "Dismiss機能サンプル"
         }
     }
 
@@ -69,6 +74,8 @@ enum AppPath: Identifiable, CaseIterable {
             ListWithFilterView()
         case .alamofireSample:
             AFSampleView()
+        case .dismissSample:
+            DismissSampleView()
         }
     }
 }
